@@ -1,0 +1,24 @@
+[Public]
+2.0.116.0 - 2017/12/21
+
+[New]
+The JVM-based parsers (Java, C, C++) -as well as the external one- will now display more accurate error messages if an error is detected. Please have in mind that our bundled JVM-based parsers require JVM version 8 or higher!
+
+[Bug]
+
+Semantic: An Index was outside the bounds of the array exception was thrown, caused by a problem in how the semantic differences were concurrently calculated. Fixed.
+
+[Bug]
+An exception with the message "specified argument was out of the range of valid values" appeared sometimes if the user switched quickly between file diffs. Fixed.
+
+[Bug]
+Semantic merge: A null exception was thrown sometimes trying to set the syntax language in the result textbox. Fixed.
+
+[Bug]
+A "Path cannot be null" exception was thrown when running a semantic merge that involved 3 text files and the "run the text merge tool" button was clicked. Fixed.
+
+[Bug]
+Semantic diff C#: some outline nodes (e.g. C# properties or regions) were not expanded even if they had differences. It was very uncomfortable. The user had to expand them manually in order to see the differences. Fixed.
+
+[Bug]
+A null exception was thrown when a changed-changed conflict was pending to solve and the result declaration was not present. Fixed.
