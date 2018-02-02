@@ -12,7 +12,7 @@ Semantic: An Index was outside the bounds of the array exception was thrown, cau
 An exception with the message "specified argument was out of the range of valid values" appeared sometimes if the user switched quickly between file diffs. Fixed.
 
 [Bug]
-Semantic merge: A null exception was thrown sometimes trying to set the syntax language in the result textbox. Fixed.
+Semantic merge: A null exception was thrown sometimes trying to set the syntax language in the result textbox. Fixed!
 
 [Bug]
 A "Path cannot be null" exception was thrown when running a semantic merge that involved 3 text files and the "run the text merge tool" button was clicked. Fixed.
