@@ -2,13 +2,11 @@ using System.Net;
 
 namespace Network
 {
-    internal class Socket
+    internal class ServerSocket
     {
-        internal string GetHostByName(string addr)
+        internal int Recv(byte[] buffer)
         {
-            // this method returns the host
-            // when you give an addr
-            return CalculateHostByName(addr);
+            System.IO.Read(buffer);
         }
 
         internal void Listen()
@@ -17,15 +15,21 @@ namespace Network
             // and whatever it is needed
             // to listen
         }
+    }
 
-        internal int Recv(byte[] buffer)
+    internal class DNS
+    {
+        internal string GetHostByName(string addr)
         {
-            System.IO.Read(buffer);
+            // this method returns the host
+            // when you give an addr
+            return CalculateHostByName(addr);
         }
     }
 
     internal class ClientSocket
     {
+
         internal int Send(byte[] buffer)
         {
             System.IO.Write(buffer);
