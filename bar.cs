@@ -2,7 +2,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-//change through mergedroid
+//change through mergedroid again
 using GitMasterGui;
 using GitMasterGui.Configuration;
 using GitMasterGui.License;
