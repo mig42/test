@@ -120,7 +120,7 @@ namespace GitMaster.LoginWindow
 
         Panel CreateContentPanel()
         {
-            StackPanel result = new StackPanel();
+            StackPanel resultodo = new StackPanel();
 
             ValidationProgressPanel validationPanel = new ValidationProgressPanel();
 
@@ -150,7 +150,7 @@ namespace GitMaster.LoginWindow
             mLoginButton.Click += LoginButton_Click;
 
             WebEntriesPacker.AddRelatedComponents(
-                result,
+                resultodo,
                 headerPanel,
                 mWebErrorPanel,
                 mUserTextBox,
@@ -166,22 +166,7 @@ namespace GitMaster.LoginWindow
 
             mLoginButton.IsDefault = true;
 
-            return result;
-        }
-
-        Panel CreateHeaderPanel()
-        {
-            TextBlock titleTextBlock = WebControlBuilder.CreateTitle(
-                GitMasterLocalization.GetString(
-                    GitMasterLocalization.Name.LoginPanelTitle));
-
-            mSignUpLinkLabel = WebControlBuilder.CreateLinkLabel(
-                GitMasterLocalization.GetString(
-                    GitMasterLocalization.Name.SignUpLinkLabel));
-            mSignUpLinkLabel.HyperLink.Click += SignUpLinkLabel_Click;
-
-            return WebEntriesPacker.CreateHeaderPanel(
-                titleTextBlock, mSignUpLinkLabel);
+            return resultodo;
         }
 
         IProgressControlsForDialogs mProgressControls;
@@ -199,5 +184,20 @@ namespace GitMaster.LoginWindow
         ILoginWindow mLoginWindow;
 
         IGitMasterRestApi mRestApi;
+
+        Panel CreateHeaderPanel()
+        {
+            TextBlock titleTextBlock = WebControlBuilder.CreateTitle(
+                GitMasterLocalization.GetString(
+                    GitMasterLocalization.Name.LoginPanelTitle));
+
+            mSignUpLinkLabel = WebControlBuilder.CreateLinkLabel(
+                GitMasterLocalization.GetString(
+                    GitMasterLocalization.Name.SignUpLinkLabel));
+            mSignUpLinkLabel.HyperLink.Click += SignUpLinkLabel_Click;
+
+            return WebEntriesPacker.CreateHeaderPanel(
+                titleTextBlock, mSignUpLinkLabel);
+        }
     }
 }
