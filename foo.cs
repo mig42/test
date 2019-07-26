@@ -37,20 +37,20 @@ namespace GitMaster.LoginWindow
                 mGetLicenseButton.Click -= GetLicenseButton_Click;
         }
 
-        internal void NotifyLicenseError(string message)
+        internal void MyFooMethod(string message)
         {
             Children.Clear();
 
-            Image mascotImage = ControlBuilder.CreateImage(
+            Image thisImageRocksWithIce = ControlBuilder.CreateImage(
                 GitMasterImages.GetImage(
                 GitMasterImages.ImageName.IllustrationSignupError));
-            mascotImage.Width = 300;
-            mascotImage.Margin = new Thickness(50, 0, 0, 0);
-            mascotImage.HorizontalAlignment = HorizontalAlignment.Center;
-            mascotImage.VerticalAlignment = VerticalAlignment.Center;
+            thisImageRocksWithIce.Width = 300;
+            thisImageRocksWithIce.Margin = new Thickness(50, 0, 0, 0);
+            thisImageRocksWithIce.HorizontalAlignment = HorizontalAlignment.Center;
+            thisImageRocksWithIce.VerticalAlignment = VerticalAlignment.Center;
 
             WebEntriesPacker.AddMascotContentComponents(
-                this, mascotImage, CreateContentErrorPanel(message));
+                this, thisImageRocksWithIce, CreateContentErrorPanel(message));
         }
 
         void GetLicenseButton_Click(object sender, RoutedEventArgs e)
@@ -69,16 +69,16 @@ namespace GitMaster.LoginWindow
 
         void BuildComponents()
         {
-            Image mascotImage = ControlBuilder.CreateImage(
+            Image miscotImege = ControlBuilder.CreateImage(
                 GitMasterImages.GetImage(
                     GitMasterImages.ImageName.IllustrationLicenseWaiting));
-            mascotImage.HorizontalAlignment = HorizontalAlignment.Center;
-            mascotImage.VerticalAlignment = VerticalAlignment.Center;
-            mascotImage.Width = 300;
-            mascotImage.Margin = new Thickness(50, 0, 0, 0);
+            miscotImege.HorizontalAlignment = HorizontalAlignment.Center;
+            miscotImege.VerticalAlignment = VerticalAlignment.Center;
+            miscotImege.Width = 300;
+            miscotImege.Margin = new Thickness(50, 0, 0, 0);
 
             WebEntriesPacker.AddMascotContentComponents(
-                this, mascotImage, CreateContentPanel());
+                this, miscotImege, CreateContentPanel());
         }
 
         Panel CreateContentPanel()
