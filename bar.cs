@@ -52,6 +52,21 @@ namespace GitMaster.LoginWindow
             mWebErrorPanel.ShowError(message);
         }
 
+        Panel CreateHeaderPanel()
+        {
+            TextBlock titleTextBlock = WebControlBuilder.CreateTitle(
+                GitMasterLocalization.GetString(
+                    GitMasterLocalization.Name.LoginPanelTitle));
+
+            mSignUpLinkLabel = WebControlBuilder.CreateLinkLabel(
+                GitMasterLocalization.GetString(
+                    GitMasterLocalization.Name.SignUpLinkLabel));
+            mSignUpLinkLabel.HyperLink.Click += SignUpLinkLabel_Click;
+
+            return WebEntriesPacker.CreateHeaderPanel(
+                titleTextBlock, mSignUpLinkLabel);
+        }
+
         void SignUpLinkLabel_Click(object sender, RoutedEventArgs e)
         {
             mLoginWindow.ShowSignUpPanel();
@@ -167,21 +182,6 @@ namespace GitMaster.LoginWindow
             mLoginButton.IsDefault = true;
 
             return result;
-        }
-
-        Panel CreateHeaderPanel()
-        {
-            TextBlock titleTextBlock = WebControlBuilder.CreateTitle(
-                GitMasterLocalization.GetString(
-                    GitMasterLocalization.Name.LoginPanelTitle));
-
-            mSignUpLinkLabel = WebControlBuilder.CreateLinkLabel(
-                GitMasterLocalization.GetString(
-                    GitMasterLocalization.Name.SignUpLinkLabel));
-            mSignUpLinkLabel.HyperLink.Click += SignUpLinkLabel_Click;
-
-            return WebEntriesPacker.CreateHeaderPanel(
-                titleTextBlock, mSignUpLinkLabel);
         }
 
         IProgressControlsForDialogs mProgressControls;

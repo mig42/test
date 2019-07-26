@@ -37,20 +37,20 @@ namespace GitMaster.LoginWindow
                 mGetLicenseButton.Click -= GetLicenseButton_Click;
         }
 
-        internal void NotifyLicenseError(string message)
+        internal void PublishLicenseError(string text)
         {
             Children.Clear();
 
-            Image mascotImage = ControlBuilder.CreateImage(
+            Image theImage = ControlBuilder.CreateImage(
                 GitMasterImages.GetImage(
                 GitMasterImages.ImageName.IllustrationSignupError));
-            mascotImage.Width = 300;
-            mascotImage.Margin = new Thickness(50, 0, 0, 0);
-            mascotImage.HorizontalAlignment = HorizontalAlignment.Center;
-            mascotImage.VerticalAlignment = VerticalAlignment.Center;
+            theImage.Width = 300;
+            theImage.Margin = new Thickness(50, 0, 0, 0);
+            theImage.HorizontalAlignment = HorizontalAlignment.Center;
+            theImage.VerticalAlignment = VerticalAlignment.Center;
 
             WebEntriesPacker.AddMascotContentComponents(
-                this, mascotImage, CreateContentErrorPanel(message));
+                this, theImage, CreateContentErrorPanel(text));
         }
 
         void GetLicenseButton_Click(object sender, RoutedEventArgs e)
